@@ -32,5 +32,5 @@ open class StatefulVM<C, D> {
     /// Overridable method in which to set observers and other reactive components.
     open func bindSubscriptions() { }
     
-    internal final func updateViewState(to state: UIState<D>) { onUIUpdate?(state) }
+    public final func updateViewState(to state: UIState<D>) { onUIUpdate?(state) }
 }
