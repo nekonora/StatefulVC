@@ -13,8 +13,8 @@ open class StatefulVM<C, D> {
     
     // MARK: - Properties
     
-    @Published private(set) var config: C?
-    @Published var data: D?
+    @Published public var config: C?
+    @Published public var data: D?
     
     internal final var onUIUpdate: ((UIState<D>) -> Void)?
     public final var subscriptions = Set<AnyCancellable>()
