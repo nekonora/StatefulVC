@@ -37,6 +37,7 @@ let booklistVC = BoolistVC.storyboardInstance(with: BooklistVM(config: config, d
 In our view model, we can override the `bindSubscriptions()` method to provide our implementation of how the view controller's view should be updated. For example, let's say that some service or method updates the array of books stored in `data`: we can update the view accordingly by calling `updateViewState()`:
 
 ```swift
+/// In BooklistVM
 override func bindSubscriptions() {
     $data
         .dropFirst()
@@ -44,6 +45,17 @@ override func bindSubscriptions() {
         .store(in: &subscriptions)
 }
 ```
+
+We then decide what the view should do when the `data` state is set:
+
+```swift
+/// In BooklistVC
+
+override func onStateData(data: [Book]) {
+    applyDataSnapshot(data)
+}
+```
+
 Done!
 
 You can look at the tests for an example of how this is intended to work.
