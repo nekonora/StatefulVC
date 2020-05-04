@@ -39,7 +39,7 @@ open class StatefulVC<C, D, M: StatefulVM<C, D>>: UIViewController {
     /// the same name of the controller.
     /// - Parameter viewModel: The view model that manages the scene
     /// - Returns: The view controller of the scene
-    static func storyboardInstance(with viewModel: M) -> Self? {
+    static public func storyboardInstance(with viewModel: M) -> Self? {
         let vc = UIStoryboard(name: String(describing: Self.self),
                               bundle: Bundle.main).instantiateInitialViewController() as? Self
         vc?.model = viewModel
@@ -50,7 +50,7 @@ open class StatefulVC<C, D, M: StatefulVM<C, D>>: UIViewController {
     /// Creates a new instance of the scene built on the provided view model.
     /// - Parameter viewModel: The view model that manages the scene
     /// - Returns: The view controller of the scene
-    static func instance(with viewModel: M) -> Self? {
+    static public func instance(with viewModel: M) -> Self? {
         let vc = self.init(viewModel: viewModel)
         return vc
     }
