@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 /// An object used to manage a view controller with specified types of data.
-public class StatefulVM<C, D> {
+open class StatefulVM<C, D> {
     
     // MARK: - Properties
     

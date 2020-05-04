@@ -19,7 +19,7 @@ import UIKit
 ///          ```
 ///          class BooksListViewController: StatefulVC<Author, [Books], BooksListViewModel> { ... }
 ///          ```
-public class StatefulVC<C, D, M: StatefulVM<C, D>>: UIViewController {
+open class StatefulVC<C, D, M: StatefulVM<C, D>>: UIViewController {
     
     // MARK: - Properties
     
@@ -55,13 +55,13 @@ public class StatefulVC<C, D, M: StatefulVM<C, D>>: UIViewController {
         return vc
     }
     
-    required init(viewModel: M) {
+    required public init(viewModel: M) {
         self.model = viewModel
         super.init(nibName: nil, bundle: nil)
         self.model.onUIUpdate = { [weak self] in self?.setState($0) }
     }
     
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     

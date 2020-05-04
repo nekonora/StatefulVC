@@ -6,7 +6,11 @@ This is a simple MVVM-based reactive-whatever architecture bundle for iOS built 
 
 ## Import
 
-You can import this as a SPM package in Xcode, using the git link of this repo.
+You can import this as a SPM package in Xcode:
+
+```
+https://github.com/nekonora/StatefulVC.git
+```
 
 ## Example
 
