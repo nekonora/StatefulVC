@@ -42,6 +42,7 @@ In our view model, we can override the `bindSubscriptions()` method to provide o
 
 ```swift
 /// In BooklistVM
+
 override func bindSubscriptions() {
     $data
         .dropFirst()
