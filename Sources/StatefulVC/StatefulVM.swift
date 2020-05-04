@@ -21,7 +21,7 @@ open class StatefulVM<C, D> {
     
     // MARK: - Init
     
-    init(config: C? = nil, initialData: D? = nil) {
+    public init(config: C? = nil, initialData: D? = nil) {
         self.config = config
         self.data = initialData
         self.bindSubscriptions()
@@ -30,7 +30,7 @@ open class StatefulVM<C, D> {
     // MARK: - Methods
     
     /// Overridable method in which to set observers and other reactive components.
-    func bindSubscriptions() { }
+    open func bindSubscriptions() { }
     
     internal final func updateViewState(to state: UIState<D>) { onUIUpdate?(state) }
 }
