@@ -24,7 +24,7 @@ open class StatefulVC<C, D, M: StatefulVM<C, D>>: UIViewController {
     // MARK: - Properties
     
     /// The model of the scene
-    final var model: M!
+    public final var model: M!
     
     // MARK: - State
     
