@@ -24,7 +24,7 @@ open class StatefulVC<C, D, M: StatefulVM<C, D>>: UIViewController {
     // MARK: - Properties
     
     /// The model of the scene
-    var model: M
+    final var model: M!
     
     // MARK: - State
     
@@ -83,22 +83,22 @@ open class StatefulVC<C, D, M: StatefulVM<C, D>>: UIViewController {
     // MARK: - Overridables
     
     /// Called when the scene is loaded. Should effectively substitute viewDidLoad().
-    func onStateInitial() { }
+    open func onStateInitial() { }
     
     /// Should be set when transitioning from a state to another.
-    func onStateLoading() { }
+    open func onStateLoading() { }
     
     /// Called when data has been retrieved and is ready to be shown in the UI.
     /// - Parameter data: The specific data managed by this scene.
-    func onStateData(data: D) { }
+    open func onStateData(data: D) { }
     
     /// Should be called whenever an error occours or when data could not be displayed
-    func onStateError() { }
+    open func onStateError() { }
     
     /// Gets called for every state change. This is useful as a single place to update
     /// UI elements based on the the new provided state.
     /// - Parameter state: The newly set stata.
-    func updateUIElements(_ state: UIState<D>) { }
+    open func updateUIElements(_ state: UIState<D>) { }
     
     // MARK: - Private methods
     
