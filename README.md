@@ -46,4 +46,4 @@ override func bindSubscriptions() {
 ```
 Done!
 
-You can look at the tests for and example of how this is intended to work.
+You can look at the tests for an example of how this is intended to work.
