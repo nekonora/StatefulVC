@@ -17,7 +17,7 @@ open class StatefulVM<C, D> {
     @Published var data: D?
     
     internal final var onUIUpdate: ((UIState<D>) -> Void)?
-    final var subscriptions = Set<AnyCancellable>()
+    public final var subscriptions = Set<AnyCancellable>()
     
     // MARK: - Init
     
